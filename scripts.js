@@ -205,12 +205,12 @@ function fetchWeatherData() {
 }
 
 function cleanData(value) {
-    // 공백이나 '.'을 0으로 처리합니다.
-    if (value.trim() === '' || value.trim() === '.') {
-    return '-';
+    if (typeof value === 'undefined' || value.trim() === '' || value.trim() === '.') {
+        return '0';
     }
     return value.trim();
-    }
+}
+
 
 window.onload = fetchWeatherData;
 
